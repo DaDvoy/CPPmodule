@@ -3,12 +3,20 @@
 
 #include <iostream>
 #include <string>
+#include "ContactData.hpp"
 
 class PhoneBook
 {
 private:
-    /* data */
+	ContactData		contact[8];
+	int				count;
 public:
-    PhoneBook(/* args */);
-    ~PhoneBook();
+	PhoneBook(/* args */);
+	~PhoneBook();
+
+	void			Beginning(void);
+	void			AddContact(void);
+	void			SearchContact(void);
 };
+
+#endif
