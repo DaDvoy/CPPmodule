@@ -11,8 +11,8 @@ private:
 	ContactData		contact[8];
 	int				count;
 public:
-	PhoneBook(/* args */);
-	~PhoneBook();
+	PhoneBook(void);
+	~PhoneBook(void);
 
 	void			Beginning(void);
 	void			AddContact(void);
