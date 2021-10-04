@@ -11,10 +11,10 @@ private:
 	ContactData		contact[8];
 	int				count;
 public:
-	PhoneBook(void);
-	~PhoneBook(void);
+	PhoneBook();
+	~PhoneBook();
 
-	void			Beginning(void);
+	// void			Beginning(void);
 	void			AddContact(void);
 	void			SearchContact(void);
 };

@@ -5,7 +5,7 @@ int		main(void)
 	std::string		command;
 	PhoneBook		PhoneBook;
 
-	std::cout << "Hi, to choose one of options: ADD, SEARCH or EXIT" << std::endl;
+	std::cout << "\x1b[36;1mHi, to choose one of options: ADD, SEARCH or EXIT\x1b[0m" << std::endl;
 	while (1)
 	{
 		std::cin >> command;
@@ -18,11 +18,14 @@ int		main(void)
 			// std::cout << "add";
 			//smt::comand;
 		else if (command == "SEARCH")
-			std::cout << "search";
+			PhoneBook.SearchContact();
+			// std::cout << "search";
 			//smt::comand;
 		else if (command == "EXIT")
-			std::cout << "exit";
+			break ;
+			// std::cout << "exit";
 			//smt::comand;
 	}
+	std::cout << "\x1b[34;1mClosing PhooneBook, goodbye ;)\x1b[0m" << std::endl;
 	return (0);
 }
