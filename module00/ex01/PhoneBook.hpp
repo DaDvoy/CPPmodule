@@ -10,11 +10,15 @@ class PhoneBook
 private:
 	ContactData		contact[8];
 	int				count;
+	bool			rewriting;
 public:
 	PhoneBook();
 	~PhoneBook();
 
-	// void			Beginning(void);
+	void			Menu(void);
+	int				CheckEmpty(void);
+	int				CheckValid();
+	void			PrintBook(void);
 	void			AddContact(void);
 	void			SearchContact(void);
 };

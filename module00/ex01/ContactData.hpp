@@ -9,6 +9,7 @@
 class ContactData
 {
 private:
+	bool			launch;
 	std::string		first_name;
 	std::string		last_name;
 	std::string		nickname;
@@ -21,8 +22,9 @@ public:
 	std::string		getFirstName(void);
 	std::string		getLastName(void);
 	std::string		getNickname(void);
+	bool			CheckStart(void);
 	void			FillContact(void);
-	void			PrintContact(int count, std::string str);
+	void			PrintContact(int count);
 	void			ChangeSize(std::string str);
 };
 

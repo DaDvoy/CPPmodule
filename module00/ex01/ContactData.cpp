@@ -2,6 +2,7 @@
 
 ContactData::ContactData(void)
 {
+	launch = false;
 	this->first_name = "";
 	this->last_name = "";
 	this->nickname = "";
@@ -12,8 +13,14 @@ ContactData::ContactData(void)
 ContactData::~ContactData(void){
 }
 
+bool		ContactData::CheckStart(void)
+{
+	return (launch);
+}
+
 std::string	ContactData::getFirstName(void)
 {
+	std::cout << first_name << "\n";
 	return (first_name);
 }
 
@@ -49,6 +56,8 @@ void		ContactData::FillContact(void)
 	if (!getline(std::cin, darkest_secret))
 		return ;
 	std::cout << "\x1b[32;1mContact added successfully\x1b[0m" << std::endl;
+	std::cout << "--------------------------\n";
+	launch = true;
 }
 
 void		ContactData::ChangeSize(std::string str)
@@ -61,15 +70,26 @@ void		ContactData::ChangeSize(std::string str)
 	std::cout << ".";
 }
 
-void		ContactData::PrintContact(int count, std::string str)
+void		ContactData::PrintContact(int count)
 {
-	std::cout << std::setw(10) << count << "|";
-	if (str.size() > 10)
-		ChangeSize(str);
+	int		i;
+
+	i = count + 1;
+	std::cout << std::setw(10) << i << "|";
+	if (first_name.size() > 10)
+		ChangeSize(first_name);
 	else
-		std::cout << std::setw(10) << str;
+		std::cout << std::setw(10) << first_name;
 	std::cout << "|";
-	// std::cout << std::setw(10) << this->first_name;
-	// std::cout << "|";
+	if (last_name.size() > 10)
+		ChangeSize(last_name);
+	else
+		std::cout << std::setw(10) << last_name;
+	std::cout << "|";
+	if (nickname.size() > 10)
+		ChangeSize(nickname);
+	else
+		std::cout << std::setw(10) << nickname;
+	std::cout << "|";
 	std::cout << std::endl;
 }
