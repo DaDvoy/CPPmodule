@@ -70,3 +70,5 @@ void	Account::displayStatus() const {
 void    Account::makeDeposit(int deposit) {
 
 }
+
+//to fuck the merge
