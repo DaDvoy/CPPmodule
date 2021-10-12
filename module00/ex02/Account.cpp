@@ -1,15 +1,15 @@
-#include <Account.hpp>
 #include <iostream>
 #include <ctime>
+#include "Account.hpp"
 
-int	_nbAccounts = 0;
-int	_totalAmount = 0;
-int	_totalNbDeposits = 0;
-int	_totalNbWithdrawals = 0;
+int	Account::_nbAccounts = 0; //amount all accounts
+int	Account::_totalAmount = 0; //amount the cash all accounts
+int	Account::_totalNbDeposits = 0; //amount the deposits all accounts
+int	Account::_totalNbWithdrawals = 0; //amount the withdrawals all accounts
 
 Account::Account(int initial_deposit) {
 	_accountIndex = _nbAccounts++;
-	_amount = initial_deposit;
+	_amount = initial_deposit; // first amount on the account
 	_nbDeposits = 0;
 	_nbWithdrawals = 0;
 	_totalAmount += initial_deposit;
@@ -19,7 +19,7 @@ Account::Account(int initial_deposit) {
 	std::cout << "created" << std::endl;
 }
 
-Account::~Account() {
+Account::~Account(void) {
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";";
 	std::cout << "amount:" << _amount << ";";
@@ -48,7 +48,7 @@ void	Account::_displayTimestamp(void) {
 	std::cout << "[" << (now->tm_year + 1900)
 	<< (now->tm_mon + 1) << now->tm_mday
 	<< "_" << now->tm_hour << now->tm_min
-	<< now->tm_sec << "]" << "\n";
+	<< now->tm_sec << "] ";
 }
 
 void	Account::displayAccountsInfos() {
@@ -67,8 +67,39 @@ void	Account::displayStatus() const {
 	std::cout << "withdrawals:" << _nbWithdrawals << ";" << std::endl;
 }
 
-void    Account::makeDeposit(int deposit) {
-
+int		Account::checkAmount( void ) const {
+	return (_amount);
 }
 
-//to fuck the merge
+void    Account::makeDeposit(int deposit) {
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";";
+	std::cout << "p_amount:" << _amount << ";";
+	std::cout << "deposit:" << deposit << ";";
+	_amount += deposit;
+	_totalAmount += deposit;
+	std::cout << "amount:" << _amount << ";";
+	_nbDeposits++;
+	_totalNbDeposits++;
+	std::cout << "nb_deposits:" << _nbDeposits << ";" << std::endl;
+}
+
+bool	Account::makeWithdrawal( int withdrawal ) {
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";";
+	std::cout << "p_amount:" << _amount << ";";
+	if (_amount >= withdrawal)
+	{
+		std::cout << "withdrawal:" << withdrawal << ";";
+		_amount -= withdrawal;
+		_totalAmount -= withdrawal;
+		std::cout << "amount:" << _amount << ";";
+		_nbWithdrawals++;
+		_totalNbWithdrawals++;
+		std::cout << "nb_withdrawals:" << _nbWithdrawals << ";" << std::endl;
+		return (true);
+	}
+	else
+		std::cout << "withdrawal:refused" << std::endl;
+	return (false);
+}
