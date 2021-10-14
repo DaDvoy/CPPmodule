@@ -1,0 +1,1 @@
+https://ravesli.com/urok-90-operator-dostupa-k-chlenam-cherez-ukazatel/ - обьяснения почему лучше использовать "->" вместо "."
