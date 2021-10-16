@@ -1,16 +1,18 @@
 NAME = zombie
 
+HEADER = Zombie.hpp
+
 SRC = main.cpp ZombieHorde.cpp Zombie.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CXX = clang++ -Wall -Wextra -Werror
+CXX = clang++ -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
 all:	$(NAME)
 
-$(NAME):	$(OBJ)
+$(NAME):	$(OBJ) $(HEADER)
 			$(CXX) $(OBJ) -o $(NAME)
 
 clean:

@@ -4,7 +4,7 @@ SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CXX = clang++ -Wall -Wextra -Werror
+CXX = clang++ -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
