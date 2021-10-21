@@ -9,12 +9,12 @@ Fixed::Fixed() {
 
 Fixed::Fixed(const int _intFixed) {
     std::cout << "Int constructor called" << std::endl;
-	setRawBits(roundf(_intFixed * (1 << _fractBit)));
+	setRawBits(_intFixed * (1 << _fractBit));
 }
 
 Fixed::Fixed(const float _floatFixed) {
     std::cout << "Float constructor called" << std::endl;
-	setRawBits(_floatFixed * (1 << _fractBit));
+	setRawBits(roundf(_floatFixed * (1 << _fractBit)));
 }
 
 Fixed::Fixed( const Fixed &fixed ) {
@@ -42,7 +42,6 @@ std::ostream& operator<< (std::ostream &out, const Fixed &fixed) {
 // Гетеро и сетеро
 
 int		Fixed::getRawBits() const {
-	// std::cout << "getRawBits member function called" << std::endl;
 	return (this->_forFixed);
 }
 
