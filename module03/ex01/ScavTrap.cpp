@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() {
+ScavTrap::ScavTrap() : ClapTrap(){
 	this->name = "Assassin";
 	this->hitpoints = 100;
 	this->energyPoints = 50;
@@ -10,11 +10,11 @@ ScavTrap::ScavTrap() {
 		<< std::endl;
 }
 
-ScavTrap::ScavTrap(std::string _name) : ClapTrap(name){
-	name = _name;
-	hitpoints = 100;
-	energyPoints = 50;
-	attackDamage = 20;
+ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name){
+	this->name = _name;
+	this->hitpoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
 	std::cout << LIGHT_BLUE << name << STOP << GREEN " spiritually was ready for this battle for a long time"
 		<< STOP << std::endl;
 }
@@ -38,5 +38,5 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &scav) {
 }
 
 void	ScavTrap::guardGate() {
-	std::cout << "ScavTrap have enterred in Gate keeper mode" << std::endl;
+	std::cout << LIGHT_BLUE << this->name << STOP << YELLOW " have enterred in Gate keeper mode" STOP << std::endl;
 }
