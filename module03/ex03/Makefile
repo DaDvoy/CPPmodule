@@ -6,7 +6,7 @@ SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CXX = clang++ -Wall -Wextra -Werror -std=c++98
+CXX = clang++ -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow 
 
 RM = rm -f
 
