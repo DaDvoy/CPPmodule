@@ -17,8 +17,11 @@ int main()
 	const WrongAnimal* meta2 = new WrongAnimal();
 	const WrongAnimal* u = new WrongDog();
 	const WrongAnimal* k = new WrongCat();
+	const WrongCat Cat;
+	std::cout << RED << Cat.getType() << STOP << GRAY " is Cat" STOP << std::endl;
 	std::cout << RED << u->getType() << STOP << GRAY " is animal" STOP << std::endl;
 	std::cout << RED << k->getType() << STOP << GRAY " is animal" STOP << std::endl;
+	Cat.makeSound();
 	u->makeSound();
 	k->makeSound();
 	meta2->makeSound();
@@ -31,4 +34,6 @@ int main()
 	delete u;
 	delete k;
 	delete meta2;
+
+	return (0);
 }

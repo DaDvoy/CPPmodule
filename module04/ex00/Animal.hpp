@@ -33,8 +33,6 @@ public:
 	Cat(Cat &cat);
 	virtual ~Cat();
 
-	// Cat &Cat::operator=(Cat &_copyCat);
-
 	void	makeSound() const;
 };
 
