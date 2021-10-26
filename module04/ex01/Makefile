@@ -1,8 +1,8 @@
 NAME = Brain
 
-HEADER = Animal.hpp WrongAnimal.hpp 
+HEADER = Animal.hpp Brain.hpp 
 
-SRC = main.cpp Animal.cpp WrongAnimal.cpp
+SRC = main.cpp Animal.cpp Brain.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

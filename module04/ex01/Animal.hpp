@@ -37,7 +37,10 @@ public:
 	virtual ~Cat();
 
 	void	makeSound() const;
+	Brain	*getBrain();
+	Cat &operator=(Cat &_copyCat);
 };
+	std::ostream& operator<< (std::ostream &out, const Cat &cat);
 
 class Dog : public Animal
 {
@@ -49,6 +52,9 @@ public:
 	virtual ~Dog();
 
 	void	makeSound() const;
+	Brain	*getBrain();
+	Dog &operator=(Dog &_copyDog);
 };
+	std::ostream& operator<< (std::ostream &out, const Dog &dog);
 
 #endif
