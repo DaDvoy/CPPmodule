@@ -10,6 +10,11 @@ Animal::Animal(Animal &animal) {
 	this->operator= (animal);
 }
 
+// Animal::Animal(Dog &animal) {
+// 	this->operator= (animal);
+// }
+
+
 Animal::~Animal() {
 	std::cout << LIGHT_BLUE << this->type << STOP
 		<< RED " is in BlackBook now..." STOP << std::endl;
@@ -27,6 +32,12 @@ std::string	Animal::getType() const {
 void	Animal::makeSound() const {
 	std::cout << LIGHT_BLUE << this->type << STOP
 		<< YELLOW " something in animal language" STOP << std::endl;
+}
+
+std::ostream& operator<< (std::ostream &out, const Animal &animal) {
+	out << animal.getType() << std::endl
+		<< GRAY "I have " STOP << animal.getType() << std::endl;
+	return (out);
 }
 
 // Cat
@@ -66,11 +77,11 @@ void	Cat::makeSound() const {
 		<< GREEN " meow." STOP << std::endl;
 }
 
-std::ostream& operator<< (std::ostream &out, const Cat &cat) {
-	out << cat.getType() << std::endl
-		<< GRAY "I have " STOP << cat.getBrain() << std::endl;
-	return (out);
-}
+// std::ostream& operator<< (std::ostream &out, const Cat &cat) {
+// 	out << cat.getType() << std::endl
+// 		<< GRAY "I have " STOP << cat.getType() << std::endl;
+// 	return (out);
+// }
 
 
 // Dog
@@ -82,10 +93,10 @@ Dog::Dog() : Animal() {
 	this->dogBrain = new Brain();
 }
 
-Dog::Dog(Dog &Dog) {
+Dog::Dog(Dog &dog) {
 	std::cout << LIGHT_BLUE << this->type << STOP
 		<< YELLOW " has own copyDog" STOP << std::endl;
-	this->operator= (Dog);
+	this->operator= (dog);
 }
 
 Dog::~Dog() {
@@ -101,7 +112,7 @@ Dog &Dog::operator=(Dog &_copyDog) {
 	return (*this);
 }
 
-Brain	*getBrain() {
+Brain	*Dog::getBrain() {
 	return (this->dogBrain);
 }
 
@@ -110,8 +121,8 @@ void	Dog::makeSound() const {
 		<< GREEN " woof." STOP << std::endl;
 }
 
-std::ostream& operator<< (std::ostream &out, const Dog &dog) {
-	out << dog.getType() << std::endl
-		<< GRAY "I have " STOP << dog.getBrain() << std::endl;
-	return (out);
-}
+// std::ostream& operator<< (std::ostream &out, const Dog &dog) {
+// 	out << dog.getType() << std::endl
+// 		<< GRAY "I have " STOP << dog.getType() << std::endl;
+// 	return (out);
+// }

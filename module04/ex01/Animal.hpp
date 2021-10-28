@@ -27,6 +27,8 @@ public:
 	Animal &operator=(Animal &_copyAnimal);
 };
 
+std::ostream& operator<<(std::ostream &out, const Animal &animal);
+
 class Cat : public Animal
 {
 private:
@@ -40,7 +42,7 @@ public:
 	Brain	*getBrain();
 	Cat &operator=(Cat &_copyCat);
 };
-	std::ostream& operator<< (std::ostream &out, const Cat &cat);
+	std::ostream& operator<<(std::ostream &out, const Cat &cat);
 
 class Dog : public Animal
 {
@@ -55,6 +57,6 @@ public:
 	Brain	*getBrain();
 	Dog &operator=(Dog &_copyDog);
 };
-	std::ostream& operator<< (std::ostream &out, const Dog &dog);
+	std::ostream& operator<<(std::ostream &out, const Dog &dog);
 
 #endif
