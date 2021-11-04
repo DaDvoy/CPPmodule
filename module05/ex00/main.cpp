@@ -9,17 +9,17 @@ int main(void){
 		try {
             smt.incrementGrade();
         }
-		catch (std::exception& e)
+		catch (std::exception& ex)
         {
-            std::cerr << RED "Error: " STOP << e.what() << std::endl;
+            std::cerr << RED "Error: " STOP << ex.what() << std::endl;
         }
         std::cout<<smt<<std::endl;
 
 		try {
             smt.incrementGrade();
         }
-		catch (std::exception& e) {
-            std::cerr << RED "Error: " STOP << e.what() << std::endl;
+		catch (std::exception& ex) {
+            std::cerr << RED "Error: " STOP << ex.what() << std::endl;
         }
         std::cout<<smt<<std::endl;
 
@@ -27,8 +27,8 @@ int main(void){
             for (int i = 0; i < 31; i++)
                 smt.incrementGrade();
         }
-		catch (std::exception& e){
-            std::cerr << RED "Error: " STOP << e.what() << std::endl;
+		catch (std::exception& ex){
+            std::cerr << RED "Error: " STOP << ex.what() << std::endl;
         }
 		
         std::cout<<smt<<std::endl;
@@ -41,16 +41,16 @@ int main(void){
 		try {
             Nth.decrementGrade();
         }
-		catch (std::exception& e){
-            std::cerr << RED "Error: " STOP << e.what() << std::endl;
+		catch (std::exception& ex){
+            std::cerr << RED "Error: " STOP << ex.what() << std::endl;
         }
         std::cout<<Nth<<std::endl;
 		try {
             for (int i = 0; i < 10; i++)
                 Nth.decrementGrade();
         }
-		catch (std::exception& e){
-            std::cerr << RED "Error: " STOP << e.what() << std::endl;
+		catch (std::exception& ex){
+            std::cerr << RED "Error: " STOP << ex.what() << std::endl;
         }
 
 		std::cout<<Nth<<std::endl;
@@ -60,16 +60,16 @@ int main(void){
 		try{
 			Bureaucrat Ant("Ant", -1);
 		}
-		catch(std::exception& e){
-            std::cerr << RED "Error: " STOP << e.what() << std::endl;
+		catch(std::exception& ex){
+            std::cerr << RED "Error: " STOP << ex.what() << std::endl;
         }
 		
         try{
 
 			Bureaucrat Ant("Ant", 151);
 		}
-		catch(std::exception& e){
-            std::cerr << RED "Error: " STOP << e.what() << std::endl;
+		catch(std::exception& ex){
+            std::cerr << RED "Error: " STOP << ex.what() << std::endl;
         }
 	}
 	return (0);
