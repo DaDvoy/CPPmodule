@@ -1,5 +1,5 @@
 #ifndef ITER_HPP
-#define ITER_HPP
+# define ITER_HPP
 
 #include <iostream>
 
@@ -11,11 +11,17 @@
 # define PINK		"\x1b[35m"
 # define STOP		"\x1b[0m"
 
-// template <typename Tadr, typename Tleng, typename T>
-// void iter(Tadr *array, Tleng lenght, void (*f)(T &t))
-// {
-// 	for (int i = 0; i < lenght; i++)
-// 		f(array[i]);
-// }
+template <typename T>
+void print(T &arr)
+{
+	std::cout << LIGHT_BLUE << arr << STOP;
+}
+
+template <typename T>
+void iter(T *array, int lenght, void (*f)(T &t))
+{
+	for (int i = 0; i < lenght; i++)
+		f(array[i]);
+}
 
 #endif

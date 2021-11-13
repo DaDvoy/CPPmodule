@@ -1,19 +1,5 @@
 #include "iter.hpp"
 
-template <typename T>
-void print(T &arr)
-{
-	std::cout << LIGHT_BLUE << arr << STOP;
-}
-
-template <typename T>
-void iter(T *array, int lenght, void (*f)(T &t))
-{
-	for (int i = 0; i < lenght; i++)
-		f(array[i]);
-}
-
-
 int		main() {
 	int arrInt[3] = {1, 2, 3}; 
 	std::cout << GREEN "Array: " STOP;
