@@ -1,8 +1,8 @@
 NAME =  Span
 
-HEADER = span.hpp
+HEADER = Span.hpp
 
-SRC = main.cpp span.cpp 
+SRC = main.cpp Span.cpp 
 
 OBJ = $(SRC:.cpp=.o)
 

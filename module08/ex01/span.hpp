@@ -13,17 +13,17 @@
 # define PINK		"\x1b[35m"
 # define STOP		"\x1b[0m"
 
-class span
+class Span
 {
 private:
 	unsigned int		_N;
 	std::vector<int>	_vect;
 public:
-	span(unsigned int N);
-	~span();
+	Span(unsigned int N);
+	~Span();
 
 	void			addNumber(int number);
-	unsigned int	shortSpan();
+	unsigned int	shortestSpan();
 	unsigned int	longestSpan();
 
 	class AlreadyExist : public std::exception
@@ -31,7 +31,11 @@ public:
 	public:
 		const char * what() const throw();
 	};
-
+	class NoSpan : public std::exception
+	{
+	public:
+		const char * what() const throw();
+	};
 };
 
 #endif
