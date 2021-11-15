@@ -28,4 +28,6 @@ int			main() {
 
 	std::cout << PINK "Struct address: " << GREEN << two << STOP << std::endl;
 	std::cout << PINK "Struct name: " << GREEN << two->_name << STOP << std::endl;
+
+	delete one;
 }

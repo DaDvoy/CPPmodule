@@ -18,10 +18,11 @@ void print(T &arr)
 }
 
 template <typename T>
-void iter(T *array, int lenght, void (*f)(T &t))
+void iter(T *array, int lenght, void (*f)(T const &t))
 {
 	for (int i = 0; i < lenght; i++)
 		f(array[i]);
 }
+
 
 #endif

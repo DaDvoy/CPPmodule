@@ -18,8 +18,7 @@ int		main(int argc, char** argv) {
 		std::cout << RED "Wrong amount of arg's" STOP << std::endl;
 		return (1);
 	}
-	else {
+	else
 		output(argv);
-	}
 	return (0);
 }
